@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar
+  version="1.0"
+  xml:lang="en-US"
+  root="automationCommands"
+  xmlns="http://www.w3.org/2001/06/grammar"
+  tag-format="semantics/1.0">
+
+  <rule id="automationCommands">
+    <item>
+      <item>
+        <ruleref uri="#moveAction" />
+        <tag> out.command=rules.latest(); </tag>
+      </item>
+      <item>
+        <ruleref uri="#direction" />
+        <tag> out.direction=rules.latest(); </tag>
+      </item>
+    </item>
+  </rule>
+
+  <rule id="moveAction">
+    <one-of>
+      <item>
+        <tag> out="MOVE"; </tag>
+        <one-of>
+          <item>move</item>
+          <item>turn</item>
+          <item>go</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="direction">
+    <item>
+      <one-of>
+        <item>
+          <tag> out="FORWARD"; </tag>
+          <one-of>
+            <item>forward</item>
+            <item>forwards</item>
+          </one-of>
+        </item>
+        <item>
+          <tag> out="BACKWARD"; </tag>
+          <one-of>
+            <item>backward</item>
+            <item>back</item>
+            <item>backwards</item>
+          </one-of>
+        </item>
+      </one-of>
+    </item>
+  </rule>
+</grammar>

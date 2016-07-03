@@ -1,0 +1,5 @@
+/.vs/SpeechRecognitionExample/v14/*.suo
+/obj
+/bin
+/SpeechRecognitionExample.csproj.user
+/SpeechRecognitionExample_TemporaryKey.pfx
